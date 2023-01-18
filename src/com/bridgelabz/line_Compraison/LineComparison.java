@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class LineComparison {
 
-    static void calculateLength(int x11,int y11,int x12,int y12,int x21,int y21,int x22,int y22){
+    static void calculateLength(double x11,double y11,double x12,double y12,double x21,double y21,double x22,double y22){
 
         Double line1Length = Math.sqrt(Math.pow(x12-x11,2)+Math.pow(y12-y11,2));
         System.out.println("Line 1 length = " + line1Length);
@@ -13,12 +13,17 @@ public class LineComparison {
         System.out.println("Line 2 length = " + line2Length);
         System.out.println();
 
-        if (line1Length.equals(line2Length) == true){
-            System.out.println("Both lines are Equal");
-        } else {
-            System.out.println("Both lines are not Equal");
-        }
+        int res = line1Length.compareTo(line2Length);
 
+        if (res == 0){
+            System.out.println("Line 1 length is equal to Line 2 length");
+        }
+        else if (res == 1) {
+            System.out.println("Line 1 length is greater than Line 2 length");
+        }
+        else {
+            System.out.println("Line 1 length is smaller than Line 2 length");
+        }
     }
 
     public static void main(String[] args) {
